@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class MathApp {
 
     public static void main(String[] args) {
@@ -42,5 +44,57 @@ public class MathApp {
         double sqrtOfVariable = Math.sqrt(5);
         System.out.println("The squart root of variable 5 is: " + sqrtOfVariable);
 
+        // Distance between points (5,10) and (85,50)
+        double distance = 0.0;
+        distance = Math.sqrt(Math.pow(85. - 5.0, 2.0) + Math.pow(50. - 10., 2.0));
+        System.out.println("Distance between two points: " + distance);
+
+        System.out.printf("Distance between two points = %5.2f \n", distance);
+
+        calculateDistanceBetween(85.,5.0,50.,10.);
+
+        int num = 42;
+        double pi = Math.PI;
+        String name = "Alice";
+        char grade = 'A';
+
+        // %d - int, %f - double, %c - char, %s - String, %b - Boolean
+        String formatted = String.format("Number: %d, Pi: %f, Name: %s, Grade: %c", num, pi, name, grade);
+        System.out.println(formatted);
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a floating-point number: ");
+        double inputValue = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println(inputValue);
+
+        System.out.println("Please enter your name: ");
+        String inputString = scanner.nextLine();
+        System.out.println(inputString);
+
+        if (inputString.equals("Paul")) {
+            System.out.println("Go away, Paul");
+        }
+        else {
+            System.out.println("Hello " + inputString);
+        }
+        return;
+    }
+
+    public static double calculateDistanceBetween(double x2, double x1, double y2, double y1) {
+        double distance = 0.0;
+        distance = Math.sqrt(Math.pow(x2 - x1, 2.0) + Math.pow(y2 - y1, 2.0));
+        return distance;
+    }
+
+    public static double promptAndReturnDouble(String prompt) {
+        double value;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(prompt + " : ");
+        value = scanner.nextDouble();
+        scanner.nextLine();
+
+        return value;
     }
 }
