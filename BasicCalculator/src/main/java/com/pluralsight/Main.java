@@ -13,7 +13,11 @@ public class Main {
         double inputValue2 =
                 requestDoubleInput(scanner);
 
-        System.out.println("""
+        double result = 0;
+        boolean done = false;
+
+        while (!done) {
+            System.out.println("""
                 Possible calculations:
                 (A)dd
                 (S)ubtract
@@ -22,10 +26,6 @@ public class Main {
                 Please select an option:
                 """);
 
-        double result;
-        boolean done = false;
-
-        while (!done) {
             // charAt(0) means char at index 0
             char option = scanner.next().charAt(0);
 
@@ -51,7 +51,7 @@ public class Main {
                     done = true;
                     break;
                 default:
-                    System.out.println("I didn't understand that, please select an option again");
+                    System.out.println("I didn't understand that");
             }
         }
     }
